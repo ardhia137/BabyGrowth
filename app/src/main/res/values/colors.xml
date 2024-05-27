@@ -5,4 +5,5 @@
     <color name="primary_color">#FFA500</color>
     <color name="secondary_color">#8BC34A</color>
     <color name="grey">#FFFFFFFF</color>
+    <color name="bg_color">#FBF5EB</color>
 </resources>
