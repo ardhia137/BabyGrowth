@@ -1,53 +1,52 @@
 package com.pukimen.babygrowth.ui.customView
 
 import android.content.Context
+import android.graphics.Canvas
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
+import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import java.util.regex.Pattern
 
 class EditTextEmail : AppCompatEditText {
 
-    constructor(context: Context) : super(context)
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+    constructor(context: Context) : super(context) {
+        init()
+    }
 
-    private var errorMessage: String? = null
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
+        init()
+    }
 
-    private val emailPattern = Pattern.compile(
-        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
-                "\\@" +
-                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
-                "(\\.[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25})+"
-    )
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+        init()
+    }
 
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        textAlignment = View.TEXT_ALIGNMENT_VIEW_START
+    }
 
+    private fun init() {
+        addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // Do nothing
+            }
 
-    private val emailTextWatcher = object : TextWatcher {
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-        override fun afterTextChanged(s: Editable?) {
-            s?.let {
-                val text = it.toString()
-                if (!isValidEmail(text)) {
-                    setError(errorMessage ?: "Invalid email format")
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val emailFormat = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+                val text = s.toString()
+                if (!text.matches(emailFormat.toRegex())) {
+                    error = "Email Anda Tidak Valid"
                 } else {
-                    setError(null)
+                    error = null
                 }
             }
-        }
-    }
-    init {
-        addTextChangedListener(emailTextWatcher)
-    }
-    private fun isValidEmail(email: String): Boolean {
-        return emailPattern.matcher(email).matches()
-    }
 
-    fun setErrorMessage(message: String) {
-        errorMessage = message
+            override fun afterTextChanged(s: Editable?) {
+                // Do nothing
+            }
+        })
     }
 }

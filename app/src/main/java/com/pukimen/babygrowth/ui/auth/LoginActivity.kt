@@ -2,6 +2,7 @@ package com.pukimen.babygrowth.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -43,11 +44,21 @@ class LoginActivity : AppCompatActivity() {
                             }
                             is Results.Error -> {
                                 binding.progressBar.visibility = View.GONE
-                                Toast.makeText(
-                                    this@LoginActivity,
-                                    "Terjadi kesalahan" + result.error,
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                if (result.error == "Unauthorized"){
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "Email atau password salah",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }else{
+                                    Log.e("LoginActivity", result.error)
+                                    Toast.makeText(
+                                        this@LoginActivity,
+                                        "Terjadi kesalahan",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+
                             }
                         }
                     }
@@ -60,9 +71,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val visibilityToggleButton: EditTextPassword = findViewById(R.id.passwordInput)
-        val visibilityToggleOff = ContextCompat.getDrawable(this, R.drawable.ic_invisibility)!!
-        visibilityToggleOff.setBounds(0, 0, visibilityToggleOff.intrinsicWidth, visibilityToggleOff.intrinsicHeight)
-        visibilityToggleButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, visibilityToggleOff, null)
+//        val visibilityToggleButton: EditTextPassword = findViewById(R.id.passwordInput)
+//        val visibilityToggleOff = ContextCompat.getDrawable(this, R.drawable.ic_invisibility)!!
+//        visibilityToggleOff.setBounds(0, 0, visibilityToggleOff.intrinsicWidth, visibilityToggleOff.intrinsicHeight)
+//        visibilityToggleButton.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, visibilityToggleOff, null)
     }
 }

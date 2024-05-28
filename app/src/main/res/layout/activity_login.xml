@@ -30,23 +30,49 @@
         android:layout_marginBottom="16dp"/>
 
     <!-- Name Input -->
-    <com.pukimen.babygrowth.ui.customView.EditTextEmail
-        android:id="@+id/emailInput"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundColor="@color/white"
+        app:hintEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+        <com.pukimen.babygrowth.ui.customView.EditTextEmail
+            android:id="@+id/emailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:gravity="start|center_vertical"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Input -->
-    <com.pukimen.babygrowth.ui.customView.EditTextPassword
-        android:id="@+id/passwordInput"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordEditTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:drawableEnd="@drawable/ic_invisibility"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        app:boxBackgroundColor="@color/white"
+        app:hintEnabled="true"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/primary_color"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+        <com.pukimen.babygrowth.ui.customView.EditTextPassword
+            android:id="@+id/passwordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:gravity="start|center_vertical"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <!-- Forgot Password Text -->
     <TextView
