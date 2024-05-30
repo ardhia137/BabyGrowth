@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.pukimen.babygrowth.databinding.ActivityMainBinding
 import com.pukimen.babygrowth.ui.auth.AuthViewModel
-import com.pukimen.babygrowth.ui.auth.HomeActivity
 import com.pukimen.babygrowth.ui.auth.LoginActivity
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val factory: ViewModelFactory = ViewModelFactory.getInstance(this)
+        val factory: ViewModelFactory = ViewModelFactory.getInstance(this,application)
         val viewModel: AuthViewModel by viewModels {
             factory
         }

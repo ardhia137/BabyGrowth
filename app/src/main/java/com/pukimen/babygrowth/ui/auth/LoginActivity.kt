@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.ui.ViewModelFactory
 import com.pukimen.babygrowth.databinding.ActivityLoginBinding
+import com.pukimen.babygrowth.ui.HomeActivity
 import com.pukimen.babygrowth.ui.customView.EditTextPassword
 import com.pukimen.babygrowth.utils.Results
 import com.pukimen.babygrowth.utils.validation
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val factory: ViewModelFactory = ViewModelFactory.getInstance(this)
+        val factory: ViewModelFactory = ViewModelFactory.getInstance(this,application)
         val viewModel: AuthViewModel by viewModels { factory }
 
         binding.loginButton.setOnClickListener {

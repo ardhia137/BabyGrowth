@@ -10,6 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiConfig {
     companion object{
         val baseUrl = BuildConfig.BASE_URL
+        val baseUrlNinja = BuildConfig.BASE_URL_NINJA
+        val apiKey = BuildConfig.API_KEY
 
 
         fun getApiService(): ApiService {
@@ -24,6 +26,25 @@ class ApiConfig {
                 .build()
             val retrofit = Retrofit.Builder()
                 .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+            return retrofit.create(ApiService::class.java)
+        }
+
+        fun getNinjaApiService(): ApiService {
+            val authInterceptor = Interceptor { chain ->
+                val req = chain.request()
+                val requestHeaders = req.newBuilder()
+                    .addHeader("x-api-key", apiKey)
+                    .build()
+                chain.proceed(requestHeaders)
+            }
+            val client = OkHttpClient.Builder()
+                .addInterceptor(authInterceptor)
+                .build()
+            val retrofit = Retrofit.Builder()
+                .baseUrl(baseUrlNinja)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

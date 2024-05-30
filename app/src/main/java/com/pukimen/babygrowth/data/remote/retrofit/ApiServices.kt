@@ -1,6 +1,8 @@
 package com.pukimen.babygrowth.data.remote.retrofit
 
 import com.pukimen.babygrowth.data.remote.response.LoginResponse
+import com.pukimen.babygrowth.data.remote.response.NuritionResponse
+import com.pukimen.babygrowth.data.remote.response.NuritionResponseItem
 import com.pukimen.babygrowth.data.remote.response.RegisterResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -22,7 +24,8 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-
+    @GET("nutrition")
+    fun getNutrition(@Query("query") query: String): Call<List<NuritionResponseItem>>
 
 
 
