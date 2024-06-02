@@ -15,6 +15,15 @@
         android:theme="@style/Theme.BabyGrowth"
         tools:targetApi="31">
         <activity
+            android:name=".ui.bottomNav.DetailRecipe"
+            android:exported="false" />
+        <activity
+            android:name=".item_row_recipe"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.DetailMealPlaner"
             android:exported="false" />
         <activity

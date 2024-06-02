@@ -1,4 +1,4 @@
-package com.pukimen.babygrowth.ui.ui.home
+package com.pukimen.babygrowth.ui.bottomNav.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

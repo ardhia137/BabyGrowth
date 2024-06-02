@@ -1,23 +1,16 @@
 package com.pukimen.babygrowth.ui
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pukimen.babygrowth.R
-import com.pukimen.babygrowth.databinding.ActivityAddFoodBinding
 import com.pukimen.babygrowth.databinding.ActivityDetailMealPlanerBinding
-import com.pukimen.babygrowth.ui.ui.FoodAdapter
-import com.pukimen.babygrowth.ui.ui.FoodViewModel
-import com.pukimen.babygrowth.ui.ui.MealPlanerAdapter
+import com.pukimen.babygrowth.ui.bottomNav.FoodViewModel
+import com.pukimen.babygrowth.ui.bottomNav.MealPlanerAdapter
 import com.pukimen.babygrowth.utils.DateHelper
 
 class DetailMealPlaner : AppCompatActivity() {

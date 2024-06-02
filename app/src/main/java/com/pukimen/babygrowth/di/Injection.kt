@@ -7,6 +7,7 @@ import com.pukimen.babygrowth.data.repository.AuthRepository
 import com.pukimen.babygrowth.data.remote.retrofit.ApiConfig
 import com.pukimen.babygrowth.data.local.dataStore
 import com.pukimen.babygrowth.data.repository.NutritionRepository
+import com.pukimen.babygrowth.data.repository.RecomendationRepository
 
 object Injection {
     fun provideAuthRepository(context: Context): AuthRepository {
@@ -19,5 +20,10 @@ object Injection {
     fun provideNutritionRepository(context: Context,application: Application): NutritionRepository {
         val apiService = ApiConfig.getNinjaApiService()
         return NutritionRepository.getInstance(apiService,application)
+    }
+
+    fun provideRecomndationRepository(context: Context): RecomendationRepository {
+        val apiService = ApiConfig.getRecomendationApiService()
+        return RecomendationRepository.getInstance(apiService)
     }
 }

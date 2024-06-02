@@ -1,4 +1,4 @@
-package com.pukimen.babygrowth.ui.ui
+package com.pukimen.babygrowth.ui.bottomNav
 
 import android.content.ContentValues
 import android.util.Log

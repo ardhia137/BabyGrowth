@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pukimen.babygrowth.databinding.ActivityAddFoodBinding
-import com.pukimen.babygrowth.ui.ui.FoodAdapter
-import com.pukimen.babygrowth.ui.ui.FoodViewModel
+import com.pukimen.babygrowth.ui.bottomNav.FoodAdapter
+import com.pukimen.babygrowth.ui.bottomNav.FoodViewModel
 import com.pukimen.babygrowth.utils.Results
 
 class AddFoodActivity : AppCompatActivity() {

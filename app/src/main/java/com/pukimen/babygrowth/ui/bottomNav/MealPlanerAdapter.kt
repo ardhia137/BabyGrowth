@@ -1,4 +1,4 @@
-package com.pukimen.babygrowth.ui.ui
+package com.pukimen.babygrowth.ui.bottomNav
 
 import android.content.ContentValues
 import android.util.Log
@@ -9,10 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pukimen.babygrowth.data.database.Nutrition
-import com.pukimen.babygrowth.data.remote.response.NuritionResponseItem
 import com.pukimen.babygrowth.databinding.ItemRowDetailBinding
-import com.pukimen.babygrowth.databinding.ItemRowFoodBinding
-import com.pukimen.babygrowth.utils.DateHelper
 
 class MealPlanerAdapter(private val viewModel: FoodViewModel, ) : ListAdapter<Nutrition, MealPlanerAdapter.MyViewHolder>(DIFF_CALLBACK) {
 

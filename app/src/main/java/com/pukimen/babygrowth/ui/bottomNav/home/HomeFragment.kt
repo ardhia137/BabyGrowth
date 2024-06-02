@@ -1,4 +1,4 @@
-package com.pukimen.babygrowth.ui.ui.home
+package com.pukimen.babygrowth.ui.bottomNav.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,26 +6,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.activity.viewModels
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.room.util.query
-import com.pukimen.babygrowth.data.database.NutritionDay
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.databinding.FragmentHomeBinding
-import com.pukimen.babygrowth.ui.AddFoodActivity
 import com.pukimen.babygrowth.ui.DetailMealPlaner
+import com.pukimen.babygrowth.ui.RecipeActivity
 import com.pukimen.babygrowth.ui.ViewModelFactory
-import com.pukimen.babygrowth.ui.ui.FoodViewModel
+import com.pukimen.babygrowth.ui.bottomNav.FoodAdapter
+import com.pukimen.babygrowth.ui.bottomNav.FoodViewModel
+import com.pukimen.babygrowth.ui.bottomNav.RecomendationAdapter
+import com.pukimen.babygrowth.ui.bottomNav.RecomendationViewModel
 import com.pukimen.babygrowth.utils.DateHelper
-import java.util.Date
+import com.pukimen.babygrowth.utils.Results
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
+    private lateinit var adapter: RecomendationAdapter
     private val binding get() = _binding!!
     val umur = 12
 
@@ -44,10 +47,15 @@ class HomeFragment : Fragment() {
         val factory: ViewModelFactory = ViewModelFactory.getInstance(requireContext(), requireActivity().application)
 
         val viewModel: FoodViewModel by viewModels { factory }
+        val rviewModel: RecomendationViewModel by viewModels { factory }
 
         getAllNutrition(viewModel)
         getfoodtime(viewModel)
 
+        binding.tvSee.setOnClickListener{
+            val intent = Intent(requireContext(), RecipeActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.cardBreakfast.setOnClickListener {
             val intent = Intent(requireContext(), DetailMealPlaner::class.java)
@@ -66,10 +74,44 @@ class HomeFragment : Fragment() {
             intent.putExtra(DetailMealPlaner.EAT_TIME,"Dinner")
             startActivity(intent)
         }
+       getRecomendation(rviewModel)
+
 
 
         return root
     }
+
+    fun getRecomendation(viewModel: RecomendationViewModel){
+        adapter = RecomendationAdapter()
+        viewModel.getRecomendation("R1").observe(viewLifecycleOwner) { results ->
+            when (results) {
+                is Results.Loading -> {
+//                    binding.progressBar.visibility = View.VISIBLE
+//                    binding.info.visibility = View.GONE
+                }
+
+                is Results.Success -> {
+//                    binding.progressBar.visibility = View.GONE
+                    val newsData = results.data
+                    adapter.submitList(newsData)
+                    Log.e("jancok", "${results.data}")
+                }
+
+                is Results.Error -> {
+                    Log.e("jancok", "${results.error}")
+//                    Toast.makeText(
+//                        this@HomeFragment,
+//                        "Terjadi kesalahan: ${results.error}",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+                }
+            }
+            val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            binding.listRecomendation.layoutManager = layoutManager
+            binding.listRecomendation.adapter = adapter
+        }
+    }
+
 
 
 

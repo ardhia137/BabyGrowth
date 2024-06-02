@@ -48,8 +48,6 @@ class NutritionRepository private constructor(
     }
     fun updateNutritionDb(nutrition: Nutrition) {
         executorService.execute { mNutritionDao.update(nutrition) }
-
-
     }
 
     fun getNutrition(query: String,): LiveData<Results<List<NuritionResponseItem>>> {

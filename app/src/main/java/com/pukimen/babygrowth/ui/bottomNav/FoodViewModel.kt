@@ -1,6 +1,5 @@
-package com.pukimen.babygrowth.ui.ui
+package com.pukimen.babygrowth.ui.bottomNav
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.pukimen.babygrowth.data.database.Nutrition
