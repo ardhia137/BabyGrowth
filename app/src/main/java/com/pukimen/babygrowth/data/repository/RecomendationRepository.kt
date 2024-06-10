@@ -46,6 +46,13 @@ class RecomendationRepository private constructor(
             RecomendationModel(
                 it.idResep!!,
                 it.namaResep!!,
+                it.gambar!!,
+                it.kalori!!,
+                it.karbo!!,
+                it.lemak!!,
+                it.protein!!,
+                it.kategori!!,
+                it.porsi!!,
                 it.similarityScore!!,
             )
         }

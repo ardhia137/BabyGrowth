@@ -21,7 +21,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_URL", "\"https://story-api.dicoding.dev/v1/\"")
+//        buildConfigField("String", "BASE_URL", "\"https://story-api.dicoding.dev/v1/\"")
+        buildConfigField("String", "BASE_URL", "\"http://34.101.83.16:3000/\"")
         buildConfigField("String", "API_KEY", "\"F83PPWkHmUGd1lAl6OgxXQ==MFhe3Rf5KDlX2Dv0\"")
         buildConfigField("String", "BASE_URL_NINJA", "\"https://api.api-ninjas.com/v1/\"")
         buildConfigField("String", "BASE_URL_RECOMENDATION", "\"https://babygrowth.pythonanywhere.com/\"")

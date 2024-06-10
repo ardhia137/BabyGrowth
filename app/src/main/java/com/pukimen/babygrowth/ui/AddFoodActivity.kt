@@ -31,6 +31,7 @@ class AddFoodActivity : AppCompatActivity() {
         with(binding) {
             searchView.setupWithSearchBar(searchBar)
             searchView.editText.setOnEditorActionListener { textView, actionId, event ->
+                searchView.toolbar.navigationIcon = null
                 searchBar.setText(searchView.text)
                 searchView.hide()
                 val query = searchView.text.toString()

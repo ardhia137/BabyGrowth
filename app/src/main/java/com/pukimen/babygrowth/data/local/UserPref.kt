@@ -17,6 +17,12 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
      suspend fun saveSession(user: UserModel) {
         dataStore.edit { preferences ->
             preferences[EMAIL_KEY] = user.email
+            preferences[NAME_KEY] = user.name
+            preferences[BIRTHDAY_KEY] = user.birthDay
+            preferences[HEIGHT_KEY] = user.height.toString()
+            preferences[WEIGHT_KEY] = user.weight.toString()
+            preferences[GENDER_KEY] = user.gender
+            preferences[UPDATEDAT_KEY] = user.updatedAt
             preferences[TOKEN_KEY] = user.token
             preferences[IS_LOGIN_KEY] = true
         }
@@ -26,6 +32,12 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         return dataStore.data.map { preferences ->
             UserModel(
                 preferences[EMAIL_KEY] ?: "",
+                preferences[NAME_KEY] ?: "",
+                preferences[BIRTHDAY_KEY] ?: "",
+                preferences[HEIGHT_KEY]?.toInt() ?: 0,
+                preferences[WEIGHT_KEY]?.toInt() ?: 0,
+                preferences[GENDER_KEY] ?: "",
+                preferences[UPDATEDAT_KEY] ?: "",
                 preferences[TOKEN_KEY] ?: "",
                 preferences[IS_LOGIN_KEY] ?: false
             )
@@ -43,6 +55,12 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         private var INSTANCE: UserPreference? = null
 
         private val EMAIL_KEY = stringPreferencesKey("email")
+        private val NAME_KEY = stringPreferencesKey("name")
+        private val BIRTHDAY_KEY = stringPreferencesKey("birthday")
+        private val HEIGHT_KEY = stringPreferencesKey("height")
+        private val WEIGHT_KEY = stringPreferencesKey("weight")
+        private val GENDER_KEY = stringPreferencesKey("gender")
+        private val UPDATEDAT_KEY = stringPreferencesKey("updated_at")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")
 

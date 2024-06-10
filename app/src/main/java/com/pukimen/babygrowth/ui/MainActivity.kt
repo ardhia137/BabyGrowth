@@ -25,11 +25,16 @@ class MainActivity : AppCompatActivity() {
         binding.ivSpalsh.alpha = 0f
         binding.ivSpalsh.animate().setDuration(1000).alpha(1f).withEndAction {
             viewModel.getSession().observe(this) { user ->
-                if (user.isLogin) {
+                if (user.name.isEmpty() && user.isLogin) {
+                    startActivity(Intent(this, InputBabyActivity::class.java))
+                    overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+                    finish()
+                }else if(user.isLogin){
                     startActivity(Intent(this, HomeActivity::class.java))
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
                     finish()
-                }else{
+                }
+                else{
                     startActivity(Intent(this, LoginActivity::class.java))
                     overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
                     finish()

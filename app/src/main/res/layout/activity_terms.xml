@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.TermsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        app:liftOnScrollColor="@color/primary_color"
+        tools:ignore="MissingConstraints">
+        <com.google.android.material.appbar.MaterialToolbar
+
+            android:layout_width="match_parent"
+            app:navigationIcon="@drawable/ic_back"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+            app:title="Terms &amp; Privacy Policy" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Content ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Terms and Conditions Title -->
+            <TextView
+                android:id="@+id/tvTermsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms and Conditions"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 1: Introduction -->
+            <TextView
+                android:id="@+id/tvIntroductionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Introduction"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvIntroductionContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to the Baby Meal Planner app. By using this app, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use this app."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 2: Use of the App -->
+            <TextView
+                android:id="@+id/tvUseOfAppTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Use of the App"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvUseOfAppContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This app is designed to assist parents in planning their baby's meals. You agree to use this app only for lawful purposes and in accordance with its intended functionality."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 3: Information Security -->
+            <TextView
+                android:id="@+id/tvInfoSecurityTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. Information Security"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvInfoSecurityContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We are committed to protecting your personal information. We implement appropriate security measures to protect your data from unauthorized access or disclosure."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 4: Information Sharing -->
+            <TextView
+                android:id="@+id/tvInfoSharingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. Information Sharing"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvInfoSharingContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We will not sell, trade, or rent your personal information to third parties without your consent, except as required by law."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Section 5: Changes to the Privacy Policy -->
+            <TextView
+                android:id="@+id/tvChangesPrivacyTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. Changes to the Privacy Policy"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvChangesPrivacyContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We may update this privacy policy from time to time. Any changes will be posted in this app. You are encouraged to review this privacy policy periodically to stay informed about any updates."
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

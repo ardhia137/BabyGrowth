@@ -59,7 +59,7 @@
         app:boxBackgroundColor="@color/white"
         app:hintEnabled="true"
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/primary_color"
+        app:endIconTint="@color/secondary_color"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
 
         <com.pukimen.babygrowth.ui.customView.EditTextPassword

@@ -16,7 +16,7 @@ import com.pukimen.babygrowth.utils.DateHelper
 class DetailMealPlaner : AppCompatActivity() {
     private lateinit var binding: ActivityDetailMealPlanerBinding
     private lateinit var adapter: MealPlanerAdapter
-    val umur = 12
+    val umur = 0
 
     var kategori = 1
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/i_labu"
+
             app:shapeAppearanceOverlay="@style/RoundImage" />
 
         <TextView
@@ -51,7 +51,7 @@
                 <ImageView
                     android:layout_width="17dp"
                     android:layout_height="17dp"
-                    android:src="@drawable/ic_time" />
+                    android:src="@drawable/ic_portion" />
 
                 <TextView
                     android:id="@+id/timeRecipe"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="4dp"
-                    android:text="60 min"
+                    android:text="1 Serving"
                     android:textSize="10sp" />
             </LinearLayout>
 

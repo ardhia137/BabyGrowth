@@ -10,6 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.data.model.RecomendationModel
 import com.pukimen.babygrowth.data.remote.response.RekomendasiItem
@@ -24,25 +25,12 @@ class RecomendationAdapter() : ListAdapter<RecomendationModel, RecomendationAdap
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val nutrition = getItem(position)
-        holder.bind(nutrition)
+        val recipe = getItem(position)
+        holder.bind(recipe)
         holder.itemView.setOnClickListener {
-            // Insert data ke database
-//            viewModel.insert(Nutrition(
-//                name = nutrition.name,
-//                calories = nutrition.calories.toString(),
-//                protein = nutrition.proteinG.toString(),
-//                carbohydrates = nutrition.carbohydratesTotalG.toString(),
-//                fat = nutrition.fatTotalG.toString(),
-//                eat_time = eat_time,
-//                date = DateHelper.getCurrentDate()
-//            ))
-//            Log.e(ContentValues.TAG, "Inserted: ${nutrition}")
-//            Toast.makeText(
-//                holder.itemView.context,
-//                "Data inserted successfully",
-//                Toast.LENGTH_SHORT
-//            ).show()
+            val intent = Intent(holder.itemView.context, DetailRecipe::class.java)
+            intent.putExtra(DetailRecipe.EXTRA_ID, recipe.id_resep)
+            holder.itemView.context.startActivity(intent)
         }
     }
 
@@ -53,7 +41,13 @@ class RecomendationAdapter() : ListAdapter<RecomendationModel, RecomendationAdap
             layoutParams.width = itemView.resources.getDimensionPixelSize(R.dimen.card_width)
             cardView.layoutParams = layoutParams
             binding.title.text = nutrition.nama_resep
+            binding.caloriesRecipe.text = "${nutrition.kalori} Cal"
+            binding.timeRecipe.text = "${nutrition.porsi} Serving"
+            Glide.with(binding.root.context)
+                .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${nutrition.id_resep}.png")
+                .into(binding.image)
         }
+
     }
 
     companion object {

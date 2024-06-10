@@ -9,9 +9,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.pukimen.babygrowth.R
+import com.pukimen.babygrowth.data.model.UserModel
 import com.pukimen.babygrowth.ui.ViewModelFactory
 import com.pukimen.babygrowth.databinding.ActivityLoginBinding
 import com.pukimen.babygrowth.ui.HomeActivity
+import com.pukimen.babygrowth.ui.InputBabyActivity
 import com.pukimen.babygrowth.ui.customView.EditTextPassword
 import com.pukimen.babygrowth.utils.Results
 import com.pukimen.babygrowth.utils.validation
@@ -25,7 +27,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         val factory: ViewModelFactory = ViewModelFactory.getInstance(this,application)
         val viewModel: AuthViewModel by viewModels { factory }
-
+        binding.signUpText.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
         binding.loginButton.setOnClickListener {
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
@@ -38,10 +43,16 @@ class LoginActivity : AppCompatActivity() {
                                 binding.progressBar.visibility = View.VISIBLE
                             }
                             is Results.Success<*> -> {
-                                binding.progressBar.visibility = View.GONE
-                                val intent = Intent(this, HomeActivity::class.java)
-                                startActivity(intent)
-                                finish()
+                                val loginResponse = result.data as UserModel
+                                if (loginResponse.name.isEmpty()) {
+                                    val intent = Intent(this@LoginActivity, InputBabyActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
                             }
                             is Results.Error -> {
                                 binding.progressBar.visibility = View.GONE

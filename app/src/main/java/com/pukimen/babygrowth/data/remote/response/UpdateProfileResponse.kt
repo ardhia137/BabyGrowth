@@ -2,10 +2,10 @@ package com.pukimen.babygrowth.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginResponse(
+data class UpdateProfileResponse(
 
 	@field:SerializedName("data")
-	val data: Logindata? = null,
+	val data: UpdateProfileData? = null,
 
 	@field:SerializedName("message")
 	val message: String? = null,
@@ -14,13 +14,10 @@ data class LoginResponse(
 	val status: String? = null
 )
 
-data class Logindata(
+data class UpdateProfileData(
 
 	@field:SerializedName("birthday")
 	val birthday: String? = null,
-
-	@field:SerializedName("createdAt")
-	val createdAt: String? = null,
 
 	@field:SerializedName("gender")
 	val gender: String? = null,
@@ -31,21 +28,9 @@ data class Logindata(
 	@field:SerializedName("weight")
 	val weight: Int? = null,
 
-	@field:SerializedName("id")
-	val id: String? = null,
-
-	@field:SerializedName("email")
-	val email: String? = null,
-
-	@field:SerializedName("username")
-	val username: String? = null,
-
 	@field:SerializedName("height")
 	val height: Int? = null,
 
 	@field:SerializedName("updatedAt")
-	val updatedAt: String? = null,
-
-	@field:SerializedName("token")
-	val token: String? = null
+	val updatedAt: String? = null
 )
