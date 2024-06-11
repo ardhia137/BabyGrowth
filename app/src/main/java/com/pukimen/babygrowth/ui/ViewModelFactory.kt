@@ -8,12 +8,13 @@ import com.pukimen.babygrowth.data.repository.AuthRepository
 import com.pukimen.babygrowth.data.repository.NutritionRepository
 import com.pukimen.babygrowth.data.repository.RecipeRepository
 import com.pukimen.babygrowth.data.repository.RecomendationRepository
+import com.pukimen.babygrowth.data.repository.ScanRepository
 import com.pukimen.babygrowth.di.Injection
 import com.pukimen.babygrowth.ui.auth.AuthViewModel
 import com.pukimen.babygrowth.ui.bottomNav.FoodViewModel
 import com.pukimen.babygrowth.ui.bottomNav.RecomendationViewModel
 
-class ViewModelFactory private constructor(private val loginRepository: AuthRepository,private val nutritionRepository: NutritionRepository,application: Application,private val recomendationRepository: RecomendationRepository,private val recipeRepository: RecipeRepository) :
+class ViewModelFactory private constructor(private val loginRepository: AuthRepository,private val nutritionRepository: NutritionRepository,application: Application,private val recomendationRepository: RecomendationRepository,private val recipeRepository: RecipeRepository,private val scanRepository: ScanRepository) :
     ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -25,6 +26,8 @@ class ViewModelFactory private constructor(private val loginRepository: AuthRepo
             return RecomendationViewModel(recomendationRepository) as T
         }else  if (modelClass.isAssignableFrom(RecipeViewModel::class.java)) {
             return RecipeViewModel(recipeRepository) as T
+        }else  if (modelClass.isAssignableFrom(ScanViewModel::class.java)) {
+            return ScanViewModel(scanRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }
@@ -42,7 +45,8 @@ class ViewModelFactory private constructor(private val loginRepository: AuthRepo
                 val recomendationRepository = Injection.provideRecomndationRepository(context)
                 val nutritionRepository = Injection.provideNutritionRepository(context,application)
                 val recipeRepository = Injection.provideRecipeRepository(context)
-                instance ?: ViewModelFactory(authRepository,nutritionRepository,application, recomendationRepository,recipeRepository
+                val scanRepository = Injection.provideScanRepository(context)
+                instance ?: ViewModelFactory(authRepository,nutritionRepository,application, recomendationRepository,recipeRepository,scanRepository
                 )
             }.also { instance = it }
     }

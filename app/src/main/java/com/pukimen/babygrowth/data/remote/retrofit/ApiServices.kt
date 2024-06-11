@@ -5,8 +5,10 @@ import com.pukimen.babygrowth.data.remote.response.AuthResponse
 import com.pukimen.babygrowth.data.remote.response.DetailRecipeResponse
 import com.pukimen.babygrowth.data.remote.response.LoginResponse
 import com.pukimen.babygrowth.data.remote.response.NuritionResponseItem
+import com.pukimen.babygrowth.data.remote.response.PredictResponse
 import com.pukimen.babygrowth.data.remote.response.RecomendationResponse
 import com.pukimen.babygrowth.data.remote.response.UpdateProfileResponse
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 interface ApiService {
@@ -58,4 +60,11 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Path("name") name: String,
     ): Call<AllRecipeResponse>
+
+    @Multipart
+    @POST("predict")
+    fun uploadImage(
+        @Header("Authorization") token: String,
+        @Part image : MultipartBody.Part,
+    ): Call<PredictResponse>
 }

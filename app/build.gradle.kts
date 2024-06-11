@@ -75,4 +75,6 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.room.compiler)
+
+    implementation ("com.github.yalantis:ucrop:2.2.8")
 }
