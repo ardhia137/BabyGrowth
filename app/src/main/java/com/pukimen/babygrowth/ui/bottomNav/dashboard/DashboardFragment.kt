@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.databinding.FragmentDashboardBinding
 import com.pukimen.babygrowth.ui.HomeActivity
 import com.pukimen.babygrowth.ui.ScanActivity
@@ -93,6 +94,13 @@ class DashboardFragment : Fragment() {
         val currentImageUri = getImageUri(requireContext())
         this.currentImageUri = currentImageUri
         launcherIntentCamera.launch(currentImageUri)
+    }
+    private fun setupUCrop(): UCrop.Options {
+        return UCrop.Options().apply {
+            setToolbarColor(ContextCompat.getColor(requireContext(), R.color.primary_color))
+            setToolbarWidgetColor(ContextCompat.getColor(requireContext(), R.color.white))
+            setActiveControlsWidgetColor(ContextCompat.getColor(requireContext(), R.color.primary_color))
+        }
     }
     private fun navigateToHome() {
         val intent = Intent(requireContext(), HomeActivity::class.java)

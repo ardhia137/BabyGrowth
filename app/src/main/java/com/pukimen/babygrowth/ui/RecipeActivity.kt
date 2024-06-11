@@ -35,14 +35,13 @@ class RecipeActivity : AppCompatActivity() {
                     when (results) {
                         is Results.Loading -> {
                             binding.progressBar.visibility = View.VISIBLE
-
+                            binding.info.visibility = View.GONE
                         }
-
                         is Results.Success -> {
                             binding.progressBar.visibility = View.GONE
                             val newsData = results.data
                             if(newsData.isEmpty()){
-
+                                binding.info.visibility = View.VISIBLE
                                 binding.rvRecipe.visibility = View.GONE
                             }else{
                                 adapter.submitList(newsData)
@@ -53,11 +52,17 @@ class RecipeActivity : AppCompatActivity() {
 
                         is Results.Error -> {
                             binding.progressBar.visibility = View.GONE
-                            Toast.makeText(
-                                this@RecipeActivity,
-                                "Terjadi kesalahan: ${results.error}",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            if(results.error == "Not Found"){
+                                binding.info.visibility = View.VISIBLE
+                                binding.rvRecipe.visibility = View.GONE
+                            }else{
+                                Toast.makeText(
+                                    this@RecipeActivity,
+                                    "Terjadi kesalahan: ${results.error}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+
                         }
                     }
                 }
@@ -77,14 +82,13 @@ class RecipeActivity : AppCompatActivity() {
                                 when (results) {
                                     is Results.Loading -> {
                                         binding.progressBar.visibility = View.VISIBLE
-
+                                        binding.info.visibility = View.GONE
                                     }
-
                                     is Results.Success -> {
                                         binding.progressBar.visibility = View.GONE
                                         val newsData = results.data
                                         if(newsData.isEmpty()){
-
+                                            binding.info.visibility = View.VISIBLE
                                             binding.rvRecipe.visibility = View.GONE
                                         }else{
                                             adapter.submitList(newsData)
@@ -95,11 +99,17 @@ class RecipeActivity : AppCompatActivity() {
 
                                     is Results.Error -> {
                                         binding.progressBar.visibility = View.GONE
-                                        Toast.makeText(
-                                            this@RecipeActivity,
-                                            "Terjadi kesalahan: ${results.error}",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
+                                        if(results.error == "Not Found"){
+                                            binding.info.visibility = View.VISIBLE
+                                            binding.rvRecipe.visibility = View.GONE
+                                        }else{
+                                            Toast.makeText(
+                                                this@RecipeActivity,
+                                                "Terjadi kesalahan: ${results.error}",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
+
                                     }
                                 }
                             }
