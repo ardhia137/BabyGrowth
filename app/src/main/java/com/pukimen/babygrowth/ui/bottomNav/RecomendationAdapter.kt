@@ -37,7 +37,13 @@ class RecomendationAdapter() : ListAdapter<RecomendationModel, RecomendationAdap
     class MyViewHolder(val binding: ItemRowRecipeBinding) : RecyclerView.ViewHolder(binding.root) {
             val cardView: CardView = binding.card
         fun bind(nutrition: RecomendationModel) {
-            val layoutParams = cardView.layoutParams
+            val layoutParams = cardView.layoutParams as ViewGroup.MarginLayoutParams
+
+            if (position == 0) {
+                layoutParams.leftMargin = (20 * itemView.context.resources.displayMetrics.density).toInt() // Convert dp to pixels
+            } else {
+                layoutParams.leftMargin = 0
+            }
             layoutParams.width = itemView.resources.getDimensionPixelSize(R.dimen.card_width)
             cardView.layoutParams = layoutParams
             binding.title.text = nutrition.nama_resep
@@ -46,6 +52,7 @@ class RecomendationAdapter() : ListAdapter<RecomendationModel, RecomendationAdap
             Glide.with(binding.root.context)
                 .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${nutrition.id_resep}.png")
                 .into(binding.image)
+
         }
 
     }

@@ -96,7 +96,8 @@
                         android:id="@+id/tvAppGoalContent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="It all started with our awareness of the importance of meeting the nutritional needs of every individual to maintain physical and psychological health. We delved deeper and realized that the beginning of this nutrition should be addressed since the time inside the mother’s womb and during the golden age of a child, which is the first one thousand days of life. With the high cases of stunting in Indonesia, it became the main reason for us to initiate this project. We hope that our project can bring positive impact and assist the government in reducing the number of stunting cases in Indonesia."
+                        android:text="
+It all began with our recognition of the crucial need to meet the nutritional requirements of individuals for both physical and psychological health. We found that nutrition should be prioritized from the time a child is in the womb and during their first thousand days of life. The high incidence of stunting in Indonesia motivated us to start this project. We aim to positively impact and support the government's efforts to reduce stunting cases in the country."
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:justificationMode="inter_word" />
 
