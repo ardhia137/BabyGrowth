@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary_color"
-        app:liftOnScrollColor="@color/primary_color"
-        tools:ignore="MissingConstraints">
+        app:liftOnScrollColor="@color/primary_color">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
@@ -58,6 +57,8 @@
                     android:id="@+id/recipe_name"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="#717070"
                     android:text="Bubur Labu"
                     android:maxLines="2"
                     android:textSize="24sp"
@@ -84,9 +85,11 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="Serving"
+                        android:fontFamily="@font/poppins_regular"
                         android:textSize="16sp"
                         android:paddingStart="8dp" />
                 </LinearLayout>
+
             </RelativeLayout>
 
             <!-- Nutrition Facts CardView -->
@@ -122,6 +125,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="516"
+                                android:fontFamily="@font/poppins_bold"
                                 android:textColor="#FF9800"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -131,6 +135,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Calories"
                                 android:textColor="#A0A0A0"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -152,6 +157,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="74"
+                                android:fontFamily="@font/poppins_bold"
                                 android:textColor="#FF9800"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -161,6 +167,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Protein"
                                 android:textColor="#A0A0A0"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -183,6 +190,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="38"
                                 android:textColor="#FF9800"
+                                android:fontFamily="@font/poppins_bold"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
 
@@ -191,6 +199,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Fat"
                                 android:textColor="#A0A0A0"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -212,6 +221,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="74"
+                                android:fontFamily="@font/poppins_bold"
                                 android:textColor="#FF9800"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -221,13 +231,45 @@
                                 android:layout_height="wrap_content"
                                 android:text="Carbo"
                                 android:textColor="#A0A0A0"
+                                android:fontFamily="@font/poppins_regular"
+
                                 android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
+
+
             </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#717070"
+                    android:text="Cocok untuk anak usia : "
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/kategori"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-6dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="5 Bulan"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
 
             <!-- Ingredients -->
             <LinearLayout
@@ -241,8 +283,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingredients:"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#717070"
                     android:textSize="18sp"
-                    android:textStyle="bold"
                     android:paddingBottom="8dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -265,8 +308,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Instructions:"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="#717070"
                     android:textSize="18sp"
-                    android:textStyle="bold"
                     android:paddingBottom="8dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -281,6 +325,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:paddingBottom="16dp"
                 >
 
                 <TextView
@@ -288,10 +334,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Recommendation"
-                    android:textColor="#000000"
+                    android:textColor="#717070"
                     android:textSize="18sp"
-                    android:paddingHorizontal="16dp"
-                    android:textStyle="bold" />
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/poppins_semibold"/>
 
                 <View
                     android:layout_marginHorizontal="16dp"
@@ -303,8 +349,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listRecomendation"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none"
+                    android:layout_height="match_parent"
                     app:layout_constraintBottom_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"/>
@@ -314,7 +359,6 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
 
     <ProgressBar
         android:id="@+id/progressBar"

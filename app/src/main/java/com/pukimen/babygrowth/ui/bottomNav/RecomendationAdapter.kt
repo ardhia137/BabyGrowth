@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.data.model.RecomendationModel
 import com.pukimen.babygrowth.data.remote.response.RekomendasiItem
@@ -51,6 +52,7 @@ class RecomendationAdapter() : ListAdapter<RecomendationModel, RecomendationAdap
             binding.timeRecipe.text = "${nutrition.porsi} Serving"
             Glide.with(binding.root.context)
                 .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${nutrition.id_resep}.png")
+                .apply(RequestOptions().error(R.drawable.i_no_image))
                 .into(binding.image)
 
         }

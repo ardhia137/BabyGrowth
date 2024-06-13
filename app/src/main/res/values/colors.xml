@@ -6,4 +6,9 @@
     <color name="secondary_color">#FFA500</color>
     <color name="grey">#D9D7D7</color>
     <color name="bg_color">#FBF5EB</color>
+
+    <color name="green">#E1F0DA</color>
+    <color name="yellow">#FFEEA1</color>
+    <color name="red">#FF9292</color>
+
 </resources>

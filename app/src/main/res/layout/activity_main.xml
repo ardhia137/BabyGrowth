@@ -1,18 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bg_color"
+    android:background="@drawable/bg_splash"
     tools:context=".ui.MainActivity">
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/iv_spalsh"
-        android:src="@drawable/i_logo"/>
+    <RelativeLayout
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/iv_spalsh"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/i_logo"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_spalsh"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Baby Growth"
+            android:textColor="#FFA32A"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins_semibold"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Version 1.06.12"
+        android:textColor="#717070"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="14sp"/>
 
 </RelativeLayout>

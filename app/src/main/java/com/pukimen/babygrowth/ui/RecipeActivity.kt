@@ -123,6 +123,12 @@ class RecipeActivity : AppCompatActivity() {
 
         binding.rvRecipe.layoutManager = GridLayoutManager(this, 2)
         binding.rvRecipe.adapter = adapter
+        setSupportActionBar(binding.topAppBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
 

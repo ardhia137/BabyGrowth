@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.data.model.Bahan
 import com.pukimen.babygrowth.data.model.Langkah
@@ -33,6 +34,7 @@ class DetailRecipe : AppCompatActivity() {
         val authViewModel: AuthViewModel by viewModels { factory }
         val rviewModel: RecomendationViewModel by viewModels { factory }
         val id = intent.getStringExtra(EXTRA_ID)
+
         authViewModel.getSession().observe(this) {
             if (it != null) {
                 recipeViewModel.getDetailRecipe(it.token, id!!).observe(this) { results ->
@@ -42,6 +44,14 @@ class DetailRecipe : AppCompatActivity() {
                                 binding.progressBar.visibility = View.VISIBLE
                             }
                             is Results.Success -> {
+                                var kategori = ""
+                                if (results.data.kategori == 0){
+                                    kategori = "6-8 Bulan"
+                                }else if (results.data.kategori == 1){
+                                    kategori = "9-11 Bulan"
+                                }else{
+                                    kategori = "12 Bulan Keatas"
+                                }
                                 binding.progressBar.visibility = View.GONE
                                 val detailRecipe = results.data
                                 Log.d("DetailRecipe", "onCreate: $detailRecipe")
@@ -51,10 +61,12 @@ class DetailRecipe : AppCompatActivity() {
                                 binding.tvFat.text = String.format("%.1f", detailRecipe.nutrisi.lemak)
                                 binding.tvCarbo.text = String.format("%.1f", detailRecipe.nutrisi.karbohidrat)
                                 binding.recipeTime.text = "${detailRecipe.porsi} Serving"
+                                binding.kategori.text = kategori
                                 setupIngredientRecyclerView(detailRecipe.bahan)
                                 setupInstructionRecyclerView(detailRecipe.langkah)
                                 Glide.with(binding.root.context)
                                     .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${detailRecipe.id}.png")
+                                    .apply(RequestOptions().error(R.drawable.i_no_image))
                                     .into(binding.ivDetailRecipe)
 
                             }
@@ -72,6 +84,12 @@ class DetailRecipe : AppCompatActivity() {
             }
         }
         getRecomendation(rviewModel, id!!)
+        setSupportActionBar(binding.topAppBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
     private fun getRecomendation(viewModel: RecomendationViewModel, id: String) {
         adapter = RecomendationAdapter()

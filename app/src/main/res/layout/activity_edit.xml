@@ -58,6 +58,32 @@
                     android:paddingEnd="0dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateEditTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundColor="@color/white"
+                app:hintEnabled="true"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_date"
+                app:endIconTint="#FFB93D"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Birthday Baby"
+                    android:gravity="start|center_vertical"
+                    android:inputType="none"
+                    android:focusable="false"
+                    android:focusableInTouchMode="true"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,16 +163,28 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please update the baby's weight and height data once a month!"
+                android:textColor="@android:color/holo_red_dark"
+                android:fontFamily="@font/poppins_medium"
+                android:padding="1dp"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                />
+
             <Button
                 android:id="@+id/editButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edit"
                 android:textSize="18sp"
-                android:backgroundTint="@color/primary_color"
+                android:background="@drawable/button_bg"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="32dp"
-                android:padding="16dp" />
+                 />
             <ProgressBar
                 android:layout_marginTop="20dp"
                 android:id="@+id/progressBar"

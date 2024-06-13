@@ -4,7 +4,7 @@ data class RecipeModel(
     val id: String,
     val name: String,
     val image: String,
-    val kategori: Int,
+    var kategori: Int,
     val porsi: Int,
     val langkah: List<Langkah>,
     val bahan: List<Bahan>,
@@ -19,8 +19,9 @@ data class Langkah(
 )
 
 data class Bahan(
-    val jumlah: Any, // Can be Int or String
+    val jumlah: String, // Can be Int or String
     val nama_bahan: Any,
+    val satuan: Any,
     val id_bahan: String
 )
 

@@ -88,6 +88,9 @@ data class BahanItemAll(
 	@field:SerializedName("nama_bahan")
 	val namaBahan: String? = null,
 
+	@field:SerializedName("satuan")
+	val satuan: String? = null,
+
 	@field:SerializedName("id_bahan")
 	val idBahan: String? = null
 )

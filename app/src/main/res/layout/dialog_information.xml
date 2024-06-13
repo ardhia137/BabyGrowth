@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Information"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FFA500" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tekstur Makanan berdasarkan umur :\n\n• 6-8 Bulan diberikan makanan dengan tekstur saring atau kental.\n\n• 9-12 Bulan diberikan makanan dengan tekstur tim atau lunak.\n\n• dan 13-24 Bulan diberikan makanan dengan tekstur biasa."
+        android:paddingBottom="16dp"/>
+
+
+
+    <TextView
+        android:id="@+id/tvAdditionalTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tips Tambahan: \n\n• Perhatikan reaksi alergi pada bayi saat memberikan makanan baru.\n\n• Berikan makanan dalam suasana yang menyenangkan dan tanpa paksaan.\n\n• Libatkan bayi dalam proses makan dengan memberikan finger food.\n\n• Hindari memberikan makanan yang tinggi gula, garam, dan lemak."
+        android:paddingBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_color"
+        android:text="OK"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

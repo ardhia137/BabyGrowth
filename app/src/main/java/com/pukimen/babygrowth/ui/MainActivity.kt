@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        binding.ivSpalsh.alpha = 0f
-        binding.ivSpalsh.animate().setDuration(1000).alpha(1f).withEndAction {
+        binding.iv.alpha = 0f
+        binding.iv.animate().setDuration(1000).alpha(1f).withEndAction {
             viewModel.getSession().observe(this) { user ->
                 if (user.name.isEmpty() && user.isLogin) {
                     startActivity(Intent(this, InputBabyActivity::class.java))

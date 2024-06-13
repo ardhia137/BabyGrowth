@@ -15,6 +15,11 @@ class TermsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityTermsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        setSupportActionBar(binding.topAppBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

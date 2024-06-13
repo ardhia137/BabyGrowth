@@ -7,14 +7,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.pukimen.babygrowth.BuildConfig
 import com.pukimen.babygrowth.R
-import com.pukimen.babygrowth.databinding.FragmentNotificationsBinding
+import com.pukimen.babygrowth.databinding.FragmentProfileBinding
 import com.pukimen.babygrowth.ui.AboutActivity
 import com.pukimen.babygrowth.ui.EditActivity
 import com.pukimen.babygrowth.ui.TermsActivity
@@ -26,9 +26,9 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 
-class NotificationsFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -40,17 +40,16 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val factory: ViewModelFactory = ViewModelFactory.getInstance(requireContext(), requireActivity().application)
 
         val viewModel: AuthViewModel by viewModels { factory }
         val FoodviewModel: FoodViewModel by viewModels { factory }
-
+        val versionName = BuildConfig.VERSION_NAME
+        binding.tvVersion.text = "Version $versionName"
         binding.termsPolicy.setOnClickListener {
             val intent = Intent(context, TermsActivity::class.java)
             startActivity(intent)

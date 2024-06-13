@@ -75,6 +75,12 @@ class AddFoodActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.listFood.layoutManager = layoutManager
         binding.listFood.adapter = adapter
+        setSupportActionBar(binding.topAppBar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
     companion object{
         const val EAT_TIME = "eat_time"

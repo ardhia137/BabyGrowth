@@ -36,6 +36,7 @@ class RecipeRepository private constructor(
                 if (response.isSuccessful) {
 
                     val recipeModel = response.body()?.data
+                    Log.d("jumlah", recipeModel?.bahan.toString())
                     val listrekomModel =  mapToRecipeModel(recipeModel!!)
                     results.value = Results.Success(listrekomModel)
 
@@ -112,7 +113,7 @@ class RecipeRepository private constructor(
             kategori = detailRecipeResponse.kategori ?: 0,
             porsi = detailRecipeResponse.porsi ?: 0,
             langkah = detailRecipeResponse.langkah!!.map { Langkah(it?.step?:0, it?.deskripsi.toString()) },
-            bahan = detailRecipeResponse.bahan!!.map { Bahan(it?.jumlah ?: 0, it?.namaBahan.toString(), it?.idBahan.toString()) },
+            bahan = detailRecipeResponse.bahan!!.map { Bahan(it?.jumlah.toString(), it?.namaBahan.toString(), it?.satuan.toString(), it?.idBahan.toString()) },
             nutrisi = Nutrisi(
                 kalori = detailRecipeResponse.nutrisi?.kalori?.toString()?.toDouble() ?: 0.0,
                 karbohidrat = detailRecipeResponse.nutrisi?.karbohidrat?.toString()?.toDouble() ?: 0.0,
@@ -136,7 +137,7 @@ class RecipeRepository private constructor(
             kategori = detailRecipeResponse.kategori ?: 0,
             porsi = detailRecipeResponse.porsi ?: 0,
             langkah = detailRecipeResponse.langkah!!.map { Langkah(it?.step?:0, it?.deskripsi.toString()) },
-            bahan = detailRecipeResponse.bahan!!.map { Bahan(it?.jumlah ?: 0, it?.namaBahan.toString(), it?.idBahan.toString()) },
+            bahan = detailRecipeResponse.bahan!!.map { Bahan(it?.jumlah.toString(), it?.namaBahan.toString(), it?.satuan.toString(), it?.idBahan.toString()) },
             nutrisi = Nutrisi(
                 kalori = detailRecipeResponse.nutrisi?.kalori?.toString()?.toDouble() ?: 0.0,
                 karbohidrat = detailRecipeResponse.nutrisi?.karbohidrat?.toString()?.toDouble() ?: 0.0,

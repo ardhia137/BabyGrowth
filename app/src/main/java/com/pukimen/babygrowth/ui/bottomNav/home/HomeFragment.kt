@@ -1,5 +1,6 @@
 package com.pukimen.babygrowth.ui.bottomNav.home
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -7,9 +8,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -58,7 +62,7 @@ class HomeFragment : Fragment() {
         authviewModel.getSession().observe(viewLifecycleOwner, Observer {
             binding.greeting.text = "Hello ${it.name},"
             umur = calculateAgeInMonths(it.birthDay).toInt()
-
+            checkLastUpdate(it.updatedAt)
         })
 
         getAllNutrition(viewModel)
@@ -66,7 +70,9 @@ class HomeFragment : Fragment() {
         setupClickListeners()
 
         getRecomendation(rviewModel)
-
+        binding.cardMpasiGuideline.setOnClickListener {
+            showInformationDialog()
+        }
         return root
     }
 
@@ -110,6 +116,36 @@ class HomeFragment : Fragment() {
             0
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun checkLastUpdate(updatedAt: String?) {
+        if (!updatedAt.isNullOrEmpty()) {
+            try {
+                val formatter = DateTimeFormatter.ISO_DATE_TIME
+                val lastUpdateDate = LocalDate.parse(updatedAt, formatter)
+                val currentDate = LocalDate.now()
+                val monthsDifference = ChronoUnit.MONTHS.between(lastUpdateDate, currentDate)
+
+                if (monthsDifference >= 1) {
+                    showUpdatePopup()
+                }
+            } catch (e: Exception) {
+                Log.e("HomeFragment", "Error parsing date: ${e.message}")
+            }
+        }
+    }
+
+    private fun showUpdatePopup() {
+        AlertDialog.Builder(requireContext()).apply {
+            setTitle("Update Required")
+            setMessage("Please update your baby's height and weight")
+            setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }
+            create().show()
+        }
+    }
+
     private fun getRecomendation(viewModel: RecomendationViewModel) {
         adapter = RecomendationAdapter()
         viewModel.getRecomendation("R1").observe(viewLifecycleOwner) { results ->
@@ -155,10 +191,41 @@ class HomeFragment : Fragment() {
 
                 viewModel.getNutritionDay(kategori).observe(viewLifecycleOwner, Observer { nutritionDay ->
                     if (nutritionDay != null) {
-                        binding.tvFat.text = "Fat: ${String.format("%.2f", totalFat)} / ${nutritionDay.fat} G"
-                        binding.tvProtein.text = "Protein: ${String.format("%.2f", totalProtein)} / ${nutritionDay.protein} G"
-                        binding.tvCarbo.text = "Carbo: ${String.format("%.2f", totalCarbo)} / ${nutritionDay.carbohydrates} G"
-                        binding.tvCalories.text = "Calories: ${String.format("%.2f", totalCalories)} / ${nutritionDay.calories} Cal"
+
+                        val totalFatInt = totalFat.toInt()
+                        val totalProteinInt = totalProtein.toInt()
+                        val totalCarboInt = totalCarbo.toInt()
+                        val totalCaloriesInt = totalCalories.toInt()
+
+                        val rFatInt = nutritionDay.fat.toInt()
+                        val rProteinInt = nutritionDay.protein.toInt()
+                        val rCarboInt = nutritionDay.carbohydrates?.toInt()
+                        val rCaloriesInt = nutritionDay.calories.toInt()
+
+                        binding.tvFat.text = "$totalFatInt"
+                        binding.tvRFat.text = nutritionDay.fat
+                        binding.tvProtein.text = "$totalProteinInt"
+                        binding.tvRProtein.text = nutritionDay.protein
+                        binding.tvCarbo.text = "$totalCarboInt"
+                        binding.tvRCarbo.text = nutritionDay.carbohydrates
+                        binding.tvCalories.text = "$totalCaloriesInt"
+                        binding.tvRCalories.text = nutritionDay.calories
+
+                        if (totalFatInt > rFatInt) {
+                            binding.tvFat.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                        }
+
+                        if (totalProteinInt > rProteinInt) {
+                            binding.tvProtein.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                        }
+
+                        if (totalCarboInt > rCarboInt!!) {
+                            binding.tvCarbo.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                        }
+
+                        if (totalCaloriesInt > rCaloriesInt) {
+                            binding.tvCalories.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                        }
                     }
                 })
 
@@ -187,6 +254,27 @@ class HomeFragment : Fragment() {
                 textView.text = "${String.format("%.2f", totalCalories)} Cal"
             }
         })
+    }
+
+    @SuppressLint("MissingInflatedId")
+    private fun showInformationDialog() {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_information, null)
+
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .setCancelable(false) // Prevent dialog from being dismissed by clicking outside
+
+        val alertDialog = dialogBuilder.create()
+
+        val tvTitle = dialogView.findViewById<TextView>(R.id.tvTitle)
+        val tvContent = dialogView.findViewById<TextView>(R.id.tvContent)
+        val btnOk = dialogView.findViewById<Button>(R.id.btnOk)
+
+        btnOk.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        alertDialog.show()
     }
 
     override fun onDestroyView() {

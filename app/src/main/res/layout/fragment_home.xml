@@ -35,9 +35,10 @@
                     android:maxLines="2"
                     android:layout_marginTop="16dp"
                     android:text="Hello Asfara,"
+                    android:fontFamily="@font/poppins_bold"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    />
 
                 <TextView
                     android:id="@+id/subtitle"
@@ -45,8 +46,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@id/greeting"
                     android:layout_below="@id/greeting"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:text="Let's Plan Your Meal!"
+                    android:fontFamily="@font/poppins_medium"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
@@ -61,12 +63,12 @@
             </RelativeLayout>
 
 
-            <!-- Meal Planner Section -->
             <LinearLayout
 
                 android:id="@+id/meal_planner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:orientation="vertical"
                 >
 
@@ -75,15 +77,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Meal Planner"
-                    android:textColor="#000000"
+                    android:textColor="#717070"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/poppins_semibold" />
 
                 <View
                     android:layout_marginHorizontal="16dp"
                     android:layout_width="120dp"
-                    android:layout_height="4dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="1dp"
                     android:background="#FFA500" />
 
                 <!-- Nutritional Info Section -->
@@ -96,25 +98,114 @@
 
                     <!-- Left Column -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="26dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingTop="8dp">
 
-                        <TextView
-                            android:id="@+id/tvCalories"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Calories: 785 / 725 Cal"
-                            android:textSize="14sp" />
 
-                        <TextView
-                            android:id="@+id/tvProtein"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Protein: 0.8 / 8 Gram"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@+id/tv_calories"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="705"
+                                android:textColor="#717070"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="/"
+                                android:textColor="#717070"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_r_calories"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="725"
+                                android:textColor="@color/primary_color"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-5dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Calories"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:orientation="horizontal"
+                            android:padding="4dp">
+
+                            <TextView
+                                android:id="@id/tv_protein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="0.8"
+                                android:textColor="#717070"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="/"
+                                android:textColor="#717070"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_r_protein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="8"
+                                android:textColor="@color/primary_color"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-5dp"
+                                android:fontFamily="@font/poppins_light"
+                                android:text="Gr"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:text="Proteins"
+                                android:textSize="13sp" />
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -123,35 +214,198 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/tvCarbo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:text="Carbo: 8.3 / 82 Gram"
-                            android:textSize="14sp" />
+                        android:orientation="vertical"
+                        android:paddingTop="8dp">
 
-
-                        <TextView
-                            android:id="@+id/tvFat"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:text="Fat: 0.2 / 36 Gram"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:padding="4dp"
+                            >
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:id="@+id/tv_carbo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="80"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="#717070"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:text="/"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="#717070"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:id="@+id/tv_r_carbo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:text="82"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/primary_color"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-5dp"
+                                android:fontFamily="@font/poppins_light"
+                                android:text="Gr"
+                                android:textSize="12sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="Carbo"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="6dp"
+                            android:padding="4dp"
+                            >
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:id="@+id/tv_fat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="19"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="#717070"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:text="/"
+                                android:textSize="16sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="#717070"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:id="@+id/tv_r_fat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-6dp"
+                                android:text="36"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_bold"
+                                android:textColor="@color/primary_color"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="-5dp"
+                                android:fontFamily="@font/poppins_light"
+                                android:text="Gr"
+                                android:textSize="12sp" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="Fat"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textSize="13sp"/>
+                        </LinearLayout>
+
                     </LinearLayout>
+
+
                 </LinearLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="*Kebutuhan Nutrisi Perhari"
+                    android:textColor="#717070"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingTop="8dp"/>
+
+
+
+
                 <!-- Meal Items -->
+
                 <LinearLayout
-                    android:paddingHorizontal="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="329dp"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:layout_height="393dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp">
+
+                    <!-- MPASI Guideline -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardMpasiGuideline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="4dp"
+                        app:strokeColor="@android:color/darker_gray"
+                       >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:padding="16dp"
+                            android:background="@drawable/gradientorange_bg">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="MPASI Guideline"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/poppins_semibold"/>
+
+                                <TextView
+                                    android:id="@+id/tvMpasiGuideline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="MPASI texture based on baby's age"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="13sp"
+                                    android:fontFamily="@font/poppins_light"/>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="91dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="-10dp"
+                                android:src="@drawable/i_guideline" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+
 
                     <!-- Breakfast -->
                     <androidx.cardview.widget.CardView
@@ -165,7 +419,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="93dp"
+                            android:layout_height="80dp"
                             android:orientation="horizontal"
                             android:padding="16dp">
 
@@ -185,17 +439,20 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+
                                     android:text="Breakfast"
                                     android:textColor="#000000"
-                                    android:textSize="16sp" />
+                                    android:textSize="16sp"
+                                    android:fontFamily="@font/poppins_semibold" />
 
                                 <TextView
                                     android:id="@+id/tvBreakfast"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="0 Cal"
-                                    android:textColor="#000000"
-                                    android:textSize="14sp" />
+                                    android:textColor="#7D7B7B"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins_medium"/>
                             </LinearLayout>
 
                             <ImageView
@@ -214,13 +471,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         app:cardBackgroundColor="#FFFFFF"
-                        app:cardCornerRadius="30dp"
+                        app:cardCornerRadius="20dp"
                         app:cardElevation="4dp"
                         app:strokeColor="@android:color/darker_gray">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="80dp"
                             android:orientation="horizontal"
                             android:padding="16dp">
 
@@ -232,26 +489,27 @@
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="16dp"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="vertical"
-                                android:paddingStart="16dp">
+                                android:orientation="vertical">
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Lunch"
                                     android:textColor="#000000"
-                                    android:textSize="16sp" />
+                                    android:textSize="16sp"
+                                    android:fontFamily="@font/poppins_semibold" />
 
                                 <TextView
                                     android:id="@+id/tvLunch"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="0 Cal"
-                                    android:textColor="#000000"
-                                    android:textSize="14sp" />
+                                    android:layout_height="wrap_content" android:text="0 Cal"
+                                    android:textColor="#7D7B7B"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins_medium"
+                                    />
                             </LinearLayout>
 
                             <ImageView
@@ -275,7 +533,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="80dp"
                             android:orientation="horizontal"
                             android:padding="16dp">
 
@@ -293,20 +551,21 @@
                                 android:orientation="vertical">
 
                                 <TextView
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Dinner"
                                     android:textColor="#000000"
-                                    android:textSize="16sp" />
+                                    android:textSize="16sp"
+                                    android:fontFamily="@font/poppins_semibold" />
 
                                 <TextView
                                     android:id="@+id/tvDinner"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="0 Cal"
-                                    android:textColor="#000000"
-                                    android:textSize="14sp" />
+                                    android:textColor="#7D7B7B"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/poppins_medium"/>
                             </LinearLayout>
 
                             <ImageView
@@ -319,12 +578,13 @@
                     </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
+
                 <!-- Recommendation Menu Section -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginBottom="60dp"
+                    android:layout_marginBottom="50dp"
                     android:paddingBottom="16dp"
                     >
 
@@ -338,9 +598,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Recommendation"
-                            android:textColor="#000000"
+                            android:textColor="#717070"
                             android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:fontFamily="@font/poppins_semibold"/>
 
                         <TextView
                             android:id="@+id/tvSee"
@@ -352,7 +612,8 @@
                             android:focusable="true"
                             android:text="See All.."
                             android:textColor="#FFA500"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_semibold"/>
                     </RelativeLayout>
 
                     <View

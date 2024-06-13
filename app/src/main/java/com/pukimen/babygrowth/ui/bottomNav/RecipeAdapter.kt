@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.data.database.Nutrition
 import com.pukimen.babygrowth.data.model.RecipeModel
@@ -46,6 +47,7 @@ class RecipeAdapter() : ListAdapter<RecipeModel, RecipeAdapter.MyViewHolder>(DIF
             calories.text = String.format("%.2f cal", recipe.nutrisi.kalori)
             Glide.with(binding.root.context)
                 .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${recipe.id}.png")
+                .apply(RequestOptions().error(R.drawable.i_no_image))
                 .into(binding.image)
 
         }

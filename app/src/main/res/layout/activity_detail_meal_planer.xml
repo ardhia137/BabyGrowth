@@ -22,60 +22,251 @@
             app:title="Breakfast" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Nutritional Information -->
     <LinearLayout
         android:id="@+id/nutritional_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Left and Right Columns -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvCalories"
-                android:layout_width="wrap_content"
+            <!-- Left Column -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="Calories: 34 / 725 Kcal" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="8dp">
 
-            <TextView
-                android:id="@+id/tvProtein"
-                android:layout_width="wrap_content"
+                <!-- Calories -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="705"
+                        android:textColor="#717070"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="/"
+                        android:textColor="#717070"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_r_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="725"
+                        android:textColor="@color/primary_color"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-5dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Calories"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- Proteins -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/tv_protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0.8"
+                        android:textColor="#717070"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="/"
+                        android:textColor="#717070"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_r_protein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="8"
+                        android:textColor="@color/primary_color"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-5dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Gr"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Proteins"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Right Column -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="Protein: 0.8 / 18 g" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end"
+                android:paddingTop="8dp">
 
+                <!-- Carbohydrates -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:padding="4dp">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_carbo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="80"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#717070"
+                        android:layout_marginEnd="8dp" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="right">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:text="/"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#717070"
+                        android:layout_marginEnd="8dp" />
+                    <TextView
+                        android:id="@+id/tv_r_carbo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:text="82"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/primary_color"
+                        android:layout_marginEnd="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-5dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Gr"
+                        android:textSize="12sp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:text="Carbo"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="13sp" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvCarbo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="Carbo: 8.3 / 82 g" />
-            <TextView
-                android:id="@+id/tvFat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fat: 0.2 / 36 g" />
+                <!-- Fat -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    android:padding="4dp">
 
+                    <TextView
+                        android:id="@+id/tv_fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="19"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#717070"
+                        android:layout_marginEnd="8dp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:text="/"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="#717070"
+                        android:layout_marginEnd="8dp" />
 
+                    <TextView
+                        android:id="@+id/tv_r_fat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-6dp"
+                        android:text="36"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/primary_color"
+                        android:layout_marginEnd="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-5dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Gr"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:text="Fat"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -94,10 +285,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="191dp"
-        android:layout_marginTop="415dp"
-        android:layout_marginEnd="172dp"
-        android:layout_marginBottom="268dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,10 +16,13 @@ data class DetailRecipeResponse(
 
 data class BahanItem(
 	@SerializedName("jumlah")
-	val jumlah: Any? = null, // Changed to Any to handle both Int and String
+	val jumlah: String? = null, // Changed to Any to handle both Int and String
 
 	@SerializedName("nama_bahan")
 	val namaBahan: String? = null,
+
+	@field:SerializedName("satuan")
+	val satuan: String? = null,
 
 	@SerializedName("id_bahan")
 	val idBahan: String? = null

@@ -16,7 +16,7 @@ class IngredientAdapter(private val ingredients: List<Bahan>) :
 
         fun bind(ingredient: Bahan) {
             binding.tvIngredientName.text = ingredient.nama_bahan.toString()
-            binding.tvIngredientAmount.text = ingredient.jumlah.toString()
+            binding.tvIngredientAmount.text = "${ingredient.jumlah} ${ingredient.satuan}"
         }
     }
 
