@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.pukimen.babygrowth.BuildConfig
 import com.pukimen.babygrowth.databinding.ActivityMainBinding
 import com.pukimen.babygrowth.ui.auth.AuthViewModel
 import com.pukimen.babygrowth.ui.auth.LoginActivity
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val viewModel: AuthViewModel by viewModels {
             factory
         }
-
+        binding.tvVersion.text = "Version ${BuildConfig.VERSION_NAME}"
 
         binding.iv.alpha = 0f
         binding.iv.animate().setDuration(1000).alpha(1f).withEndAction {

@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/headerImage"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="215dp"
             android:layout_marginBottom="24dp"
             android:src="@drawable/i_login"
             android:scaleType="fitCenter"/>
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Sign Up !"
             android:textSize="24sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_bold"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 
@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Password"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="start|center_vertical"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
@@ -118,6 +119,7 @@
                 android:inputType="textPassword"
                 android:layout_marginTop="10dp"
                 android:hint="Retype Password"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="start|center_vertical"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
@@ -133,6 +135,7 @@
             android:layout_marginBottom="20dp"
             android:backgroundTint="#8BC34A"
             android:text="Sign Up"
+            android:fontFamily="@font/poppins_semibold"
             android:textColor="#FFFFFF" />
 
         <LinearLayout
@@ -145,6 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Have an Account? "
+                android:fontFamily="@font/poppins_regular"
                 android:textColor="#808080"/>
 
             <TextView
@@ -153,6 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
+                android:fontFamily="@font/poppins_semibold"
                 android:textColor="#FFA500"/>
         </LinearLayout>
 

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.pukimen.babygrowth.BuildConfig
 import com.pukimen.babygrowth.R
 import com.pukimen.babygrowth.databinding.FragmentProfileBinding
@@ -93,9 +94,17 @@ class ProfileFragment : Fragment() {
             val birthday = calculateAgeInMonths(it.birthDay)
             binding.tvAge.text = "${birthday} Month"
             binding.tvName.text = it.name
+            val profileImage = if (it.gender == "Boy") {
+                R.drawable.i_profile2
+            } else {
+                R.drawable.i_profile
+            }
             Glide.with(binding.root.context)
-                .load(it.gender?.let { if (it == "Boy") R.drawable.i_profile2 else R.drawable.i_profile })
+                .load(profileImage)
+                .diskCacheStrategy(DiskCacheStrategy.NONE) // Disable disk cache
+                .skipMemoryCache(true) // Disable memory cache
                 .into(binding.ivBaby)
+
         }
 
         return root

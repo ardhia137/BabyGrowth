@@ -86,7 +86,7 @@ class ScanActivity : AppCompatActivity() {
                             val successResponse = results.data
 
                             var kategoriUsia = when {
-                                umur <= 6 -> 1
+                                umur <= 8 -> 1
                                 umur <= 11 -> 2
                                 else -> 3
                             }
@@ -99,7 +99,14 @@ class ScanActivity : AppCompatActivity() {
                                     label.equals("Bukan Makanan", ignoreCase = true) -> Pair(ContextCompat.getColor(this@ScanActivity, R.color.red), "Please enter the correct food image")
                                     else -> Pair(ContextCompat.getColor(this@ScanActivity, R.color.yellow), "Not Suitable for your baby")
                                 }
-                                val resultText = "$label, $suitabilityText"
+                                val labelText = when {
+                                    label.equals("Lumat", ignoreCase = true) -> "Your food is pureed textured, "
+                                    label.equals("Lunak", ignoreCase = true) -> "Your food is soft textured, "
+                                    label.equals("Kasar", ignoreCase = true) -> "Your food is rough textured, "
+                                    label.equals("Bukan Makanan", ignoreCase = true) -> "Not A Meal"
+                                    else -> "Unknown"
+                                }
+                                val resultText = "$labelText, $suitabilityText"
                                 binding.resultText.text = resultText
                                 binding.cvAnalyze.setCardBackgroundColor(cardBackgroundColor)
                                 showToast(successResponse.message)

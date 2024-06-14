@@ -21,7 +21,8 @@
             android:background="@color/primary_color"
             app:navigationIcon="@drawable/ic_back"
             app:titleTextColor="@color/white"
-            app:title="Edit Baby" />
+            app:title="Edit Baby"
+            android:fontFamily="@font/poppins_medium"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
@@ -53,7 +54,8 @@
                     android:inputType="text"
                     android:hint="Name"
                     android:gravity="start|center_vertical"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -75,6 +77,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Birthday Baby"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular"
                     android:gravity="start|center_vertical"
                     android:inputType="none"
                     android:focusable="false"
@@ -83,12 +87,10 @@
                     android:paddingEnd="0dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/weightEditTextLayout"
@@ -106,9 +108,10 @@
                         android:layout_width="316dp"
                         android:layout_height="wrap_content"
                         android:hint="Weight"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular"
                         android:inputType="number"
                         android:gravity="start|center_vertical"
-                        android:textSize="18sp"
                         android:paddingStart="0dp"
                         android:paddingEnd="0dp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -146,8 +149,9 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:hint="Height"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_regular"
                         android:gravity="start|center_vertical"
-                        android:textSize="18sp"
                         android:paddingStart="0dp"
                         android:paddingEnd="0dp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -163,6 +167,35 @@
                     android:layout_marginStart="8dp" />
             </LinearLayout>
 
+            <!-- Gender Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/genderEditTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp"
+                app:boxBackgroundColor="@color/white"
+                app:hintEnabled="true"
+                app:hintTextColor="@color/black"
+                android:layout_gravity="left"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+
+                <Spinner
+                    android:id="@+id/genderInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:popupBackground="@color/white"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -172,19 +205,18 @@
                 android:padding="1dp"
                 android:textSize="12sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                />
+                android:layout_marginBottom="10dp" />
 
             <Button
                 android:id="@+id/editButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Edit"
-                android:textSize="18sp"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/button_bg"
                 android:textColor="@android:color/white"
-                android:layout_marginTop="32dp"
-                 />
+                android:layout_marginTop="32dp" />
             <ProgressBar
                 android:layout_marginTop="20dp"
                 android:id="@+id/progressBar"

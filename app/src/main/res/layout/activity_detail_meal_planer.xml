@@ -19,6 +19,7 @@
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
             app:title="Breakfast" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -299,6 +300,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="145dp"
         android:layout_marginBottom="281dp"
+        android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="No food found"
         android:visibility="visible"

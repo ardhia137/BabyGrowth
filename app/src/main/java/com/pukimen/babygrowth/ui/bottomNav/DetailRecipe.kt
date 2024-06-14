@@ -46,11 +46,11 @@ class DetailRecipe : AppCompatActivity() {
                             is Results.Success -> {
                                 var kategori = ""
                                 if (results.data.kategori == 0){
-                                    kategori = "6-8 Bulan"
+                                    kategori = "6-8 Months"
                                 }else if (results.data.kategori == 1){
-                                    kategori = "9-11 Bulan"
+                                    kategori = "9-11 Months"
                                 }else{
-                                    kategori = "12 Bulan Keatas"
+                                    kategori = "12 Months & Older"
                                 }
                                 binding.progressBar.visibility = View.GONE
                                 val detailRecipe = results.data
@@ -96,16 +96,19 @@ class DetailRecipe : AppCompatActivity() {
         viewModel.getRecomendation(id).observe(this) { results ->
             when (results) {
                 is Results.Loading -> {
+                    binding.progressBar2.visibility = View.VISIBLE
                     // Show loading state if needed
                 }
 
                 is Results.Success -> {
+                    binding.progressBar2.visibility = View.GONE
                     val newsData = results.data
                     adapter.submitList(newsData)
                     Log.e("HomeFragment", "Recomendation data: ${results.data}")
                 }
 
                 is Results.Error -> {
+                    binding.progressBar2.visibility = View.VISIBLE
                     Log.e("DetailRecipe", "Error: ${results.error}")
                     Toast.makeText(this, "Terjadi kesalahan: ${results.error}", Toast.LENGTH_SHORT).show()
                 }

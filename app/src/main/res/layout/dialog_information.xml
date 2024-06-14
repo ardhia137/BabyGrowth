@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Information"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_semibold"
         android:textSize="18sp"
         android:paddingBottom="8dp"/>
 
@@ -24,23 +24,26 @@
         android:id="@+id/tvContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tekstur Makanan berdasarkan umur :\n\n• 6-8 Bulan diberikan makanan dengan tekstur saring atau kental.\n\n• 9-12 Bulan diberikan makanan dengan tekstur tim atau lunak.\n\n• dan 13-24 Bulan diberikan makanan dengan tekstur biasa."
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="12sp"
+        android:text="Food Texture by Age:\n\n• 6-8 Months: Provide pureed or thick-textured food.\n\n• 9-12 Months: Provide mashed or soft-textured food.\n\n• 13-24 Months: Provide regular-textured food."
         android:paddingBottom="16dp"/>
-
-
 
     <TextView
         android:id="@+id/tvAdditionalTips"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tips Tambahan: \n\n• Perhatikan reaksi alergi pada bayi saat memberikan makanan baru.\n\n• Berikan makanan dalam suasana yang menyenangkan dan tanpa paksaan.\n\n• Libatkan bayi dalam proses makan dengan memberikan finger food.\n\n• Hindari memberikan makanan yang tinggi gula, garam, dan lemak."
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="12sp"
+        android:text="Additional Tips:\n\n• Watch for allergic reactions when introducing new foods to your baby.\n\n• Create a pleasant eating environment and avoid force-feeding.\n\n• Involve your baby in the eating process by offering finger foods.\n\n• Avoid giving foods that are high in sugar, salt, and fat."
         android:paddingBottom="16dp"/>
 
     <Button
         android:id="@+id/btnOk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/primary_color"
+        android:background="@drawable/button_bg"
+        android:layout_marginTop="20dp"
         android:text="OK"
         android:textColor="@android:color/white"/>
 

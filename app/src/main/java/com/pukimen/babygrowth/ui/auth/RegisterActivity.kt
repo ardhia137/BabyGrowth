@@ -45,7 +45,7 @@ class RegisterActivity : AppCompatActivity() {
                                 binding.progressBar.visibility = View.GONE
                                 AlertDialog.Builder(this).apply {
                                     setTitle("Yeah!")
-                                    setMessage("Registration Berhasil")
+                                    setMessage("Registration Success")
                                     setPositiveButton("Next") { dialog, _ ->
                                         val intent = Intent(context, LoginActivity::class.java)
                                         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
@@ -59,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
                                 binding.progressBar.visibility = View.GONE
                                 Toast.makeText(
                                     this@RegisterActivity,
-                                    "Terjadi kesalahan" + result.error,
+                                    "System Error" + result.error,
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }

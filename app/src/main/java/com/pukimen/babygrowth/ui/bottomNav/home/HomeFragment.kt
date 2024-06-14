@@ -148,21 +148,24 @@ class HomeFragment : Fragment() {
 
     private fun getRecomendation(viewModel: RecomendationViewModel) {
         adapter = RecomendationAdapter()
-        viewModel.getRecomendation("R1").observe(viewLifecycleOwner) { results ->
+        viewModel.getRecomendation("R10").observe(viewLifecycleOwner) { results ->
             when (results) {
                 is Results.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
                     // Show loading state if needed
                 }
 
                 is Results.Success -> {
+                    binding.progressBar.visibility = View.GONE
                     val newsData = results.data
                     adapter.submitList(newsData)
                     Log.e("HomeFragment", "Recomendation data: ${results.data}")
                 }
 
                 is Results.Error -> {
+                    binding.progressBar.visibility = View.VISIBLE
                     Log.e("HomeFragment", "Error: ${results.error}")
-                    Toast.makeText(requireContext(), "Terjadi kesalahan: ${results.error}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "System Error: ${results.error}", Toast.LENGTH_SHORT).show()
                 }
             }
         }

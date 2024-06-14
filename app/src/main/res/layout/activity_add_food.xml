@@ -18,6 +18,7 @@
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
             app:title="Add Food" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -33,6 +34,8 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:hint="Search"
+            android:fontFamily="@font/poppins_regular"
+            app:subtitleTextColor="#A9A9A9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -79,6 +82,7 @@
             android:visibility="visible"
             android:text="No food found"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

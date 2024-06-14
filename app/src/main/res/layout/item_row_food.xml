@@ -10,13 +10,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/i_salad"
             android:layout_width="84dp"
-            android:layout_height="127dp"
+            android:layout_height="100dp"
             android:src="@drawable/i_salad"
             tools:ignore="MissingConstraints" />
 
@@ -42,8 +42,9 @@
                 android:gravity="center"
                 android:layout_gravity="left"
                 android:text="Carrot"
+                android:fontFamily="@font/poppins_bold"
                 android:textSize="17sp"
-                android:textStyle="bold" />
+                />
 
             <TextView
                 android:id="@+id/tv_calories"
@@ -53,7 +54,8 @@
                 android:gravity="left"
                 android:paddingTop="4dp"
                 android:text="Calories: 34 Kcal"
-                android:textSize="14sp" />
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -71,7 +73,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_protein"
                 android:text="Protein: 0.8 Gram"
-                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 android:gravity="end" />
 
             <TextView
@@ -79,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_carbo"
                 android:text="Carbo: 8.3 Gram"
-                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="12sp"
                 android:gravity="end" />
 
 
@@ -89,7 +93,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_fat"
                 android:text="Fat: 0.2 Gram"
-                android:textSize="14sp"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_medium"
                 android:gravity="end" />
         </LinearLayout>
 

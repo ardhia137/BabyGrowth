@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -44,12 +45,20 @@ class EditActivity : AppCompatActivity() {
                 binding.heightEditTextLayout.editText?.setText(it.height.toString())
                 binding.weightEditTextLayout.editText?.setText(it.weight.toString())
                 binding.dateInput.setText(it.birthDay)
+            var genderOptions = when {
+                it.gender == "Boy" -> arrayOf("Boy", "Girl")
+                else -> arrayOf("Girl", "Boy")
+            }
+                val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, genderOptions)
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                binding.genderInput.adapter = adapter
         }
         binding.editButton.setOnClickListener {
             val name = binding.nameEditTextLayout.editText?.text.toString()
             val height = binding.heightEditTextLayout.editText?.text.toString().toInt()
             val weight = binding.weightEditTextLayout.editText?.text.toString().toInt()
             val birthDay = binding.dateInput.text.toString()
+            val gender = binding.genderInput.selectedItem.toString().trim()
 
             viewModel.update(token,name,birthDay,height,weight,gender).observe(this) { result ->
                 if (result != null) {

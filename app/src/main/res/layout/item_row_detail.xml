@@ -36,6 +36,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pumpkin"
+                android:textColor="#161616"
+                android:fontFamily="@font/poppins_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -44,7 +46,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Calories: 34 Kcal"
-                android:textSize="16sp" />
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="295dp"
@@ -57,7 +60,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Protein: 0.8 g"
-                    android:textSize="14sp" />
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tvCardCarbo"
@@ -65,18 +69,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Carbo: 8.3 g"
-                    android:textSize="14sp" />
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tvCardFat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Fat: 0.2 g"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
-
-
 
         </LinearLayout>
 

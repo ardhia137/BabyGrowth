@@ -331,15 +331,28 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="*Kebutuhan Nutrisi Perhari"
-                    android:textColor="#717070"
-                    android:textSize="13sp"
-                    android:fontFamily="@font/poppins_medium"
-                    android:paddingTop="8dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:text="* "
+                        android:textColor="@color/red"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingTop="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Daily Nutritional Requirements"
+                        android:textColor="#717070"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingTop="8dp"/>
+                </LinearLayout>
 
 
 
@@ -618,7 +631,7 @@
 
                     <View
                         android:layout_marginHorizontal="16dp"
-                        android:layout_width="150dp"
+                        android:layout_width="165dp"
                         android:layout_height="2dp"
                         android:layout_marginTop="4dp"
                         android:background="#FFA500" />
@@ -630,7 +643,18 @@
                         app:layout_constraintBottom_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
-
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

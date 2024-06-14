@@ -43,7 +43,7 @@ class RecipeAdapter() : ListAdapter<RecipeModel, RecipeAdapter.MyViewHolder>(DIF
         fun bind(recipe: RecipeModel) {
 
             title.text = recipe.name
-            duration.text = "${recipe.porsi} min"
+            duration.text = "${recipe.porsi} Serving"
             calories.text = String.format("%.2f cal", recipe.nutrisi.kalori)
             Glide.with(binding.root.context)
                 .load("https://storage.googleapis.com/babygrowth-bucket/recipe-images/${recipe.id}.png")

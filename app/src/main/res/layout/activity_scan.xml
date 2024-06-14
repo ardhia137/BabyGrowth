@@ -21,6 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="@drawable/ic_back"
             app:title="Analyze Result"
+            android:fontFamily="@font/poppins_medium"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -40,7 +41,7 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivScan"
                 android:layout_width="350dp"
-                android:layout_height="450dp"
+                android:layout_height="430dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:adjustViewBounds="true"
@@ -69,8 +70,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Analyze Result"
+                        android:fontFamily="@font/poppins_bold"
                         android:textColor="@android:color/black"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -79,8 +81,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Result"
+                        android:fontFamily="@font/poppins_medium"
                         android:textColor="@android:color/black"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

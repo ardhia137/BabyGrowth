@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="Input Baby’s Information !"
             android:textSize="24sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_bold"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp" />
 
@@ -46,6 +46,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Name"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
                 android:gravity="start|center_vertical"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />
@@ -68,6 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Birthday Baby"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
                 android:gravity="start|center_vertical"
                 android:inputType="none"
                 android:focusable="false"
@@ -99,6 +103,8 @@
                     android:layout_weight="1"
                     android:inputType="number"
                     android:hint="Weight"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular"
                     android:gravity="start|center_vertical"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp" />
@@ -110,6 +116,7 @@
                     android:gravity="center_vertical"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="Kg" />
 
             </LinearLayout>
@@ -144,6 +151,8 @@
                     android:layout_weight="1"
                     android:inputType="number"
                     android:hint="Height"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_regular"
                     android:gravity="start|center_vertical"
                     android:paddingStart="0dp"
                     android:paddingEnd="0dp" />
@@ -151,6 +160,7 @@
                 <TextView
                     android:id="@+id/heightUnit"
                     android:layout_width="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:paddingStart="8dp"
@@ -182,8 +192,8 @@
                 android:id="@+id/genderInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
-
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
                 android:popupBackground="@color/white"
                 android:paddingStart="0dp"
                 android:paddingEnd="0dp" />

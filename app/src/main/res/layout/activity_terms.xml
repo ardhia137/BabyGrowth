@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,31 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary_color"
-        app:liftOnScrollColor="@color/primary_color"
-        tools:ignore="MissingConstraints">
+        app:liftOnScrollColor="@color/primary_color">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
             android:layout_width="match_parent"
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
             app:title="Terms &amp; Privacy Policy" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Content ScrollView -->
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:orientation="vertical">
 
             <!-- Terms and Conditions Title -->
@@ -46,8 +44,10 @@
                 android:layout_height="wrap_content"
                 android:text="Terms and Conditions"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:fontFamily="@font/poppins_bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp"/>
+                android:layout_marginBottom="6dp"/>
+
 
             <!-- Section 1: Introduction -->
             <TextView
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="1. Introduction"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -65,6 +65,8 @@
                 android:layout_height="wrap_content"
                 android:text="Welcome to the Baby Meal Planner app. By using this app, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use this app."
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:fontFamily="@font/poppins_regular"
+                android:justificationMode="inter_word"
                 android:layout_marginBottom="16dp"/>
 
             <!-- Section 2: Use of the App -->
@@ -74,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="2. Use of the App"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -82,6 +84,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="This app is designed to assist parents in planning their baby's meals. You agree to use this app only for lawful purposes and in accordance with its intended functionality."
+                android:fontFamily="@font/poppins_regular"
+                android:justificationMode="inter_word"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginBottom="16dp"/>
 
@@ -92,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="3. Information Security"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -100,6 +104,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="We are committed to protecting your personal information. We implement appropriate security measures to protect your data from unauthorized access or disclosure."
+                android:fontFamily="@font/poppins_regular"
+                android:justificationMode="inter_word"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginBottom="16dp"/>
 
@@ -110,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="4. Information Sharing"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -119,6 +125,8 @@
                 android:layout_height="wrap_content"
                 android:text="We will not sell, trade, or rent your personal information to third parties without your consent, except as required by law."
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:fontFamily="@font/poppins_regular"
+                android:justificationMode="inter_word"
                 android:layout_marginBottom="16dp"/>
 
             <!-- Section 5: Changes to the Privacy Policy -->
@@ -128,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:text="5. Changes to the Privacy Policy"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                android:textStyle="bold"
+                android:fontFamily="@font/poppins_semibold"
                 android:layout_marginBottom="8dp" />
 
             <TextView
@@ -136,10 +144,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="We may update this privacy policy from time to time. Any changes will be posted in this app. You are encouraged to review this privacy policy periodically to stay informed about any updates."
+                android:fontFamily="@font/poppins_regular"
+                android:justificationMode="inter_word"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:layout_marginBottom="16dp"/>
 
         </LinearLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

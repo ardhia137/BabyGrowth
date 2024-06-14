@@ -18,7 +18,9 @@
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
-            app:title="Recipe" />
+            app:title="Recipe"
+            android:fontFamily="@font/poppins_medium"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -46,6 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:hint="Search"
+            android:fontFamily="@font/poppins_regular"
             android:iconifiedByDefault="false"
             app:layout_anchor="@id/searchBar"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             android:text="No food found"
+            android:fontFamily="@font/poppins_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

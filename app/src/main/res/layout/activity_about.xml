@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".ui.AboutActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -20,6 +19,7 @@
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
+            android:fontFamily="@font/poppins_medium"
             app:title="About" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -56,8 +56,9 @@
                 android:text="Baby Growth"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@color/secondary_color"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp" />
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="1dp" />
 
             <!-- Baby Growth App Goal Card -->
             <androidx.cardview.widget.CardView
@@ -82,12 +83,14 @@
                         android:layout_height="wrap_content"
                         android:text="Baby Growth App Goal"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="#717070"
+                        android:textSize="14sp"
                         android:layout_marginBottom="8dp" />
 
                     <!-- Divider -->
                     <View
-                        android:layout_width="160dp"
+                        android:layout_width="165dp"
                         android:layout_height="2dp"
                         android:background="@color/secondary_color"
                         android:layout_marginBottom="8dp" />
@@ -99,6 +102,8 @@
                         android:layout_height="wrap_content"
                         android:text="
 It all began with our recognition of the crucial need to meet the nutritional requirements of individuals for both physical and psychological health. We found that nutrition should be prioritized from the time a child is in the womb and during their first thousand days of life. The high incidence of stunting in Indonesia motivated us to start this project. We aim to positively impact and support the government's efforts to reduce stunting cases in the country."
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="12sp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:justificationMode="inter_word" />
 
@@ -128,7 +133,9 @@ It all began with our recognition of the crucial need to meet the nutritional re
                         android:layout_height="wrap_content"
                         android:text="Baby Growth App Creator"
                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="#717070"
+                        android:textSize="14sp"
                         android:layout_marginBottom="8dp" />
 
                     <!-- Divider -->
@@ -156,12 +163,14 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_height="wrap_content"
                                 android:text="Afriza Meidio Andhana"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Asfara Rikza Iswati"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -169,6 +178,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Reyhan Ezra Bimantara"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -176,6 +186,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Muhamad Rivan S."
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -183,6 +194,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Ahmad Ammar Bahtiar"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -190,6 +202,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Muhammad Ardhia N."
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -197,6 +210,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Evlyn Jane Putri"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
                         </LinearLayout>
@@ -213,6 +227,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Machine Learning"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -220,6 +235,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Machine Learning"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -227,6 +243,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Machine Learning"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -234,6 +251,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Cloud Computing"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -241,6 +259,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Cloud Computing"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -248,6 +267,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Mobile Development"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -255,6 +275,7 @@ It all began with our recognition of the crucial need to meet the nutritional re
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Mobile Development"
+                                android:fontFamily="@font/poppins_regular"
                                 android:textSize="12sp"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
                         </LinearLayout>

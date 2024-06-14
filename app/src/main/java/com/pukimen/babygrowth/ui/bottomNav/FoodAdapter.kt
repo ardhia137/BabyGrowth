@@ -48,7 +48,7 @@ class FoodAdapter(private val viewModel: FoodViewModel,private val eat_time: Str
             binding.tvName.text = nutrition.name
             binding.tvCalories.text = "Calories : ${nutrition.calories} Kcal"
             binding.tvProtein.text = "Protein : ${nutrition.proteinG} G"
-            binding.tvCarbo.text = "Carbohydrates : ${nutrition.carbohydratesTotalG} G"
+            binding.tvCarbo.text = "Carbo : ${nutrition.carbohydratesTotalG} G"
             binding.tvFat.text = "Fat : ${nutrition.fatTotalG} G"
         }
     }

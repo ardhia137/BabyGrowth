@@ -38,7 +38,7 @@ class EditTextEmail : AppCompatEditText {
                 val emailFormat = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
                 val text = s.toString()
                 if (!text.matches(emailFormat.toRegex())) {
-                    error = "Email Anda Tidak Valid"
+                    error = "Email Is Not Valid"
                 } else {
                     error = null
                 }

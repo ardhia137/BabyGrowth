@@ -22,9 +22,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="Profile"
+            android:fontFamily="@font/poppins_medium"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            />
     </androidx.appcompat.widget.Toolbar>
 
 
@@ -60,9 +61,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Asfara Rikza"
+                    android:fontFamily="@font/poppins_semibold"
                     android:textSize="22sp"
                     android:textColor="#000000"
-                    android:textStyle="bold"/>
+                    />
 
                 <TextView
                     android:id="@+id/tvAge"
@@ -70,6 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="9 Month"
+                    android:fontFamily="@font/poppins_medium"
                     android:textSize="17sp"
                     android:textColor="#888888"/>
             </LinearLayout>
@@ -86,7 +89,6 @@
                     android:layout_height="56dp"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?android:attr/selectableItemBackground">
@@ -104,6 +106,7 @@
                         android:layout_toEndOf="@id/ivEditBaby"
                         android:layout_marginStart="16dp"
                         android:text="Edit Baby"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
                         android:textColor="#000000"/>
 
@@ -119,7 +122,6 @@
                 </RelativeLayout>
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
-                    android:layout_marginRight="30dp"
                     android:layout_height="wrap_content"/>
 
                 <!-- Terms & Privacy Policy -->
@@ -129,7 +131,6 @@
                     android:layout_height="56dp"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?android:attr/selectableItemBackground">
@@ -147,6 +148,7 @@
                         android:layout_toEndOf="@id/ivTerms"
                         android:layout_marginStart="16dp"
                         android:text="Terms &amp; Privacy Policy"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
                         android:textColor="#000000"/>
 
@@ -161,7 +163,7 @@
                 </RelativeLayout>
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_height="wrap_content"/>
 
                 <!-- About -->
@@ -171,7 +173,6 @@
                     android:layout_height="56dp"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?android:attr/selectableItemBackground">
@@ -189,6 +190,7 @@
                         android:layout_toEndOf="@id/ivAbout"
                         android:layout_marginStart="16dp"
                         android:text="About"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
                         android:textColor="#000000"/>
 
@@ -203,7 +205,7 @@
                 </RelativeLayout>
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_height="wrap_content"/>
 
                 <!-- Log Out -->
@@ -213,7 +215,6 @@
                     android:layout_height="56dp"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?android:attr/selectableItemBackground">
@@ -231,6 +232,7 @@
                         android:layout_toEndOf="@id/ivLogout"
                         android:layout_marginStart="16dp"
                         android:text="Log Out"
+                        android:fontFamily="@font/poppins_medium"
                         android:textSize="16sp"
                         android:textColor="#000000"/>
 
@@ -245,19 +247,24 @@
                 </RelativeLayout>
                 <com.google.android.material.divider.MaterialDivider
                     android:layout_width="match_parent"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="70dp"
+                android:layout_marginTop="20dp"
+                android:text="Version 1.06.12"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="14sp"
+                android:textColor="#888888"/>
         </LinearLayout>
     </ScrollView>
-    <TextView
-        android:id="@+id/tvVersion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
-        android:text="V.1.0.0"
-        android:textSize="14sp"
-        android:textColor="#888888"/>
+
 </RelativeLayout>

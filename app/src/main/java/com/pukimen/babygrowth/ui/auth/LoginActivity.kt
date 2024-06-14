@@ -56,17 +56,17 @@ class LoginActivity : AppCompatActivity() {
                             }
                             is Results.Error -> {
                                 binding.progressBar.visibility = View.GONE
-                                if (result.error == "Unauthorized"){
+                                if (result.error == "Login failed: Unauthorized"){
                                     Toast.makeText(
                                         this@LoginActivity,
-                                        "Email atau password salah",
+                                        "Email or password is worng",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }else{
                                     Log.e("LoginActivity", result.error)
                                     Toast.makeText(
                                         this@LoginActivity,
-                                        "Terjadi kesalahan",
+                                        "System Error",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }
