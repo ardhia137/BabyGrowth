@@ -100,9 +100,9 @@ class ScanActivity : AppCompatActivity() {
                                     else -> Pair(ContextCompat.getColor(this@ScanActivity, R.color.yellow), "Not Suitable for your baby")
                                 }
                                 val labelText = when {
-                                    label.equals("Lumat", ignoreCase = true) -> "Your food is pureed textured, "
-                                    label.equals("Lunak", ignoreCase = true) -> "Your food is soft textured, "
-                                    label.equals("Kasar", ignoreCase = true) -> "Your food is rough textured, "
+                                    label.equals("Lumat", ignoreCase = true) -> "Your food is pureed textured"
+                                    label.equals("Lunak", ignoreCase = true) -> "Your food is soft textured"
+                                    label.equals("Kasar", ignoreCase = true) -> "Your food is rough textured"
                                     label.equals("Bukan Makanan", ignoreCase = true) -> "Not A Meal"
                                     else -> "Unknown"
                                 }
